@@ -6,6 +6,7 @@
   "modules": [
     "记录采信",
     "方案版本",
+    "范围依据",
     "访视排窗",
     "偏离复核",
     "复检裁决",
@@ -25,6 +26,7 @@
   "keys": [
     "intake",
     "protocol",
+    "ranges",
     "windows",
     "deviation",
     "retest",
@@ -62,6 +64,28 @@
     "deviations": "偏离",
     "retest_issues": "复检问题",
     "blocked": "阻断项",
-    "status": "状态"
+    "status": "状态",
+    "center": "中心",
+    "analyte": "检验项目",
+    "sampled_at": "采样时刻",
+    "adj_range_id": "判定范围",
+    "adj_version": "范围版本",
+    "adj_low": "下限",
+    "adj_high": "上限",
+    "adj_flag": "判定标志",
+    "toxicity_grade": "毒性分级",
+    "harm_range_id": "比较范围",
+    "harm_low": "比较下限",
+    "harm_high": "比较上限",
+    "harm_flag": "比较标志",
+    "harm_note": "比较提示",
+    "basis": "采用依据",
+    "block_code": "阻断码",
+    "block_reason": "阻断原因",
+    "range_blocks": "范围阻断",
+    "grade_drift": "分级漂移",
+    "receipt_id": "回执号",
+    "supersedes_run": "失效旧批",
+    "recompute_status": "重算状态"
   }
 }

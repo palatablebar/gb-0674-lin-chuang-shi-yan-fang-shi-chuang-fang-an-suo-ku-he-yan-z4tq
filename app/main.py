@@ -33,6 +33,17 @@ def rerun(run_id:str):
     if 'input_snapshot' not in previous:
         raise BusinessError('INPUT_SNAPSHOT_MISSING','旧批缺少源快照，请重新导入')
     return store.save(DB_PATH,evaluate({'dataset':previous['source']},snapshot=previous['input_snapshot']))
+@app.post('/api/runs/{run_id}/range-recompute')
+def range_recompute(run_id:str,payload:dict=Body(...)):
+    receipt_id=payload.get('receipt_id')
+    overrides=payload.get('overrides',{})
+    if not isinstance(receipt_id,str) or not receipt_id.strip():
+        raise BusinessError('BAD_RECEIPT','回执号不能为空')
+    if not isinstance(overrides,dict):
+        raise BusinessError('BAD_CONTEXT','范围更正参数须为对象')
+    result,receipt=store.recompute_with_receipt(DB_PATH,receipt_id.strip(),run_id,overrides,evaluate)
+    result['recompute']=receipt
+    return result
 @app.get('/api/runs')
 def runs():
     return store.history(DB_PATH)

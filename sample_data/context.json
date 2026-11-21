@@ -2,6 +2,7 @@
   "keys": [
     "intake",
     "protocol",
+    "ranges",
     "windows",
     "deviation",
     "retest",
@@ -203,6 +204,127 @@
     "V1",
     "V2"
   ],
+  "centers": {
+    "00001": "C01",
+    "00002": "C01",
+    "00003": "C01",
+    "00004": "C01",
+    "00005": "C01",
+    "00006": "C01",
+    "00007": "C01",
+    "00008": "C02",
+    "00009": "C02",
+    "00010": "C02",
+    "00011": "C02",
+    "00012": "C02",
+    "00013": "C02",
+    "00014": "C02",
+    "00015": "C03",
+    "00016": "C03",
+    "00017": "C03",
+    "00018": "C03",
+    "00019": "C03",
+    "00020": "C03"
+  },
+  "analytes": {
+    "HGB": {
+      "unit": "mg/dL",
+      "label": "血红蛋白"
+    }
+  },
+  "reference_ranges": [
+    {
+      "range_id": "RR-C01-V1",
+      "analyte": "HGB",
+      "center": "C01",
+      "version": "v1",
+      "start": "2026-01-01T00:00:00+08:00",
+      "end": "2026-11-01T00:00:00+08:00",
+      "low": "115",
+      "high": "150",
+      "supersedes": null
+    },
+    {
+      "range_id": "RR-C01-V2",
+      "analyte": "HGB",
+      "center": "C01",
+      "version": "v2",
+      "start": "2026-11-01T00:00:00+08:00",
+      "end": "2027-01-01T00:00:00+08:00",
+      "low": "117",
+      "high": "152",
+      "supersedes": "RR-C01-V1"
+    },
+    {
+      "range_id": "RR-C02-V1",
+      "analyte": "HGB",
+      "center": "C02",
+      "version": "v1",
+      "start": "2026-01-01T00:00:00+08:00",
+      "end": "2027-01-01T00:00:00+08:00",
+      "low": "120",
+      "high": "150",
+      "supersedes": null
+    },
+    {
+      "range_id": "RR-C03-V1",
+      "analyte": "HGB",
+      "center": "C03",
+      "version": "v1",
+      "start": "2026-01-01T00:00:00+08:00",
+      "end": "2027-01-01T00:00:00+08:00",
+      "low": "125",
+      "high": "155",
+      "supersedes": null
+    },
+    {
+      "range_id": "RR-HARM-V2",
+      "analyte": "HGB",
+      "center": "*",
+      "version": "v2",
+      "start": "2026-01-01T00:00:00+08:00",
+      "end": "2027-01-01T00:00:00+08:00",
+      "low": "119",
+      "high": "155",
+      "supersedes": null
+    }
+  ],
+  "harmonized": {
+    "analyte": "HGB",
+    "range_id": "RR-HARM-V2"
+  },
+  "toxicity_bounds": {
+    "HGB": {
+      "high": [
+        {
+          "grade": 1,
+          "factor": "1"
+        },
+        {
+          "grade": 2,
+          "factor": "1.5"
+        },
+        {
+          "grade": 3,
+          "factor": "2"
+        }
+      ],
+      "low": [
+        {
+          "grade": 1,
+          "factor": "0.9"
+        },
+        {
+          "grade": 2,
+          "factor": "0.75"
+        },
+        {
+          "grade": 3,
+          "factor": "0.5"
+        }
+      ]
+    }
+  },
   "units": {
     "mg/dL": "1",
     "g/L": "100",
